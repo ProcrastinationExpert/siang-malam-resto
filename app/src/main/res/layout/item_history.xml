@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/judulTransaksi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transaksi #1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/totalHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Total: Rp 50.000"
+            android:textColor="#D32F2F" />
+
+        <TextView
+            android:id="@+id/jumlahItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 Item"
+            android:textColor="#757575"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/pesananItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item 1 (x6) Rp15.000\nItem 2 (x6) Rp15.000\nItem 3 (x6) Rp15.000"
+            android:textColor="#757575"
+            android:textStyle="bold"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/tanggalPesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24-12-2025 11:00:00 WIB"
+            android:textColor="#757575"
+            android:textSize="12sp"/>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

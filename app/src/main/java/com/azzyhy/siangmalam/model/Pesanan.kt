@@ -1,14 +1,12 @@
 package com.azzyhy.siangmalam.model
 
 data class Pesanan(
-    val menuId: Int,
-    val namaMenu: String,
-    val hargaSatuan: Double,
-    var jumlah: Int
+    val menu: Menu,
+    var jumlah: Int,
+    var subtotal: Int = 0,
 ) {
-    var subtotal: Double = hargaSatuan * jumlah
-
-    fun displayInfo() {
-        println("$namaMenu x$jumlah ($subtotal)")
+    fun hitungSubtotal(): Int {
+        this.subtotal = menu.ambilHarga() * this.jumlah
+        return subtotal
     }
 }

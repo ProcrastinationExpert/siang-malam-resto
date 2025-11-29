@@ -1,12 +1,27 @@
 package com.azzyhy.siangmalam.model
 
-import com.azzyhy.siangmalam.
+import com.azzyhy.siangmalam.utils.Configuration.hargaTambahanMakananPedas
 
-class Makanan(id: Int, tipe:String, nama: String, harga: Double, stok: Int, kategori: String, private var levelPedas: Int): Menu(id, tipe, nama, harga, stok, kategori) {
-    fun getLevelPedas(): Int {
-        return this.levelPedas;
+class Makanan(id: Int, nama: String, deskripsi:String, harga: Int, stok: Int, gambar: Int, private var levelPedas: Int =0, tipe: String="makanan"): Menu(id, nama, deskripsi, harga, stok, gambar, tipe) {
+    fun ambilLevelPedas(): Int {
+        return this.levelPedas
     }
+
+    fun tambahLevelPedas() {
+        if (this.levelPedas < 8) {
+            this.levelPedas += 1
+        }
+        updateHarga()
+    }
+
+    fun kurangiLevelPedas() {
+        if (this.levelPedas > 0) {
+            this.levelPedas -= 1
+        }
+        updateHarga()
+    }
+
     override fun hitungHarga(): Int {
-        return 1;
+        return this.hargaAwal + (this.levelPedas * hargaTambahanMakananPedas)
     }
 }
